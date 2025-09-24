@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Star, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -85,14 +86,17 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-800">
-            <Button
-              size="lg"
-              className="text-lg px-8 py-4 group  animate-pulse-glow cursor-pointer"
-            >
-              <Zap className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
-              Start Your Journey
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </Button>
+            <Link href="/get-started">
+              <Button
+                size="lg"
+                className="text-lg px-8 py-4 group  animate-pulse-glow cursor-pointer"
+              >
+                <Zap className="mr-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
+                Start Your Journey
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
+              </Button>
+            </Link>
+             <Link href="/portfolio">
             <Button
               variant="outline"
               size="lg"
@@ -100,6 +104,7 @@ export function HeroSection() {
             >
               View Portfolio
             </Button>
+            </Link>
           </div>
 
           <div className="flex justify-center gap-8 mt-16 animate-fade-in-up animation-delay-1000">

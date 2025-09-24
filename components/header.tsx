@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Sparkles } from "lucide-react"
+import Link from "next/link"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -61,9 +62,11 @@ export function Header() {
             </a>
           </div>
 
-          <Button className="hidden md:block animate-slide-in-right animation-delay-400 hover-lift animate-pulse-glow cursor-pointer">
-            Get Started
-          </Button>
+          <Link href="/get-started">
+            <Button className="hidden md:block animate-slide-in-right animation-delay-400 hover-lift animate-pulse-glow cursor-pointer">
+              Get Started
+            </Button>
+          </Link>
 
           <button
             className="md:hidden text-foreground hover:text-primary transition-colors p-2 hover:bg-secondary/20 rounded-lg"
@@ -101,7 +104,9 @@ export function Header() {
               >
                 Contact
               </a>
-              <Button className="w-full mt-4 animate-pulse-glow">Get Started</Button>
+              <Link href="/get-started">
+                <Button className="w-full mt-4 animate-pulse-glow">Get Started</Button>
+              </Link>
             </div>
           </div>
         )}
